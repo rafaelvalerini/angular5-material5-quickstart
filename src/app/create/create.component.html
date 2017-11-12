@@ -1,0 +1,26 @@
+<br><br>
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="articleForms"  *ngIf="articleForms">
+      <div class="form-container">
+        
+        <mat-form-field>
+          <input matInput placeholder="Title" type="text" name="title" [formControl]="articleForms.controls['title']" formControlName="title">
+          <mat-error *ngIf="!articleForms.controls['title'].valid && articleForms.controls['title'].touched">
+            Title must be at least 10 characters long
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <textarea matInput placeholder="Content" name="content" id="content" required [formControl]="articleForms.controls['content']" formControlName="content"></textarea>
+          <mat-error *ngIf="!articleForms.controls['content'].valid && articleForms.controls['content'].touched">
+            Content must be at least 10 characters long
+          </mat-error>
+        </mat-form-field>
+        
+      </div>
+      <br><br>
+      <button color="primary" mat-raised-button (click)="addArticle(articleForms.value)" [disabled]="!articleForms.valid">Save article</button>
+    </form>
+  </mat-card-content>
+</mat-card>

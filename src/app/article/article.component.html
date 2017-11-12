@@ -1,0 +1,8 @@
+<mat-card *ngIf = "article" >
+  <mat-card-title>{{article.title}}</mat-card-title>
+  <mat-card-content>{{article.content | slice: 0:500 }}</mat-card-content>
+  <mat-card-actions>
+  <a routerLink="/edit/{{article._id}}" mat-button color="primary">Edit article</a>
+  <a (click)="deleteArticle(article._id)" mat-button color="warn">Delete article</a>
+  </mat-card-actions>
+</mat-card>

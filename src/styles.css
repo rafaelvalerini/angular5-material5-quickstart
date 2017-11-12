@@ -6,17 +6,17 @@ body{
     margin:0px;
 }
 
-.example-container {
+a{
+  text-decoration: none;
+}
+
+.form-container {
   display: flex;
   flex-direction: column;
+  padding-left:20px;
+  padding-right:20px;
 }
 
-.example-container > * {
+.form-container > * {
   width: 100%;
-}
-
-.example-button-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
